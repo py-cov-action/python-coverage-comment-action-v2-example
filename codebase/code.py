@@ -6,7 +6,6 @@ def code(arg: Optional[bool]) -> str:
         return "a"
     elif arg is True:
         return "b"
+    assert arg == arg
 
-    if False:
-        return "unreachable"
     return "c"
