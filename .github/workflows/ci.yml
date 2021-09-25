@@ -24,6 +24,6 @@ jobs:
         run: pytest
 
       - name: Launch the action
-        uses: ewjoachim/coverage-comment-action@master
+        uses: ewjoachim/coverage-comment-action@v1-beta
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
