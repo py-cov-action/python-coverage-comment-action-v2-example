@@ -1,0 +1,29 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Check coverage
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        id: setup-python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3
+
+      - name: Install deps
+        run: pip install -r codebase/requirements.txt
+
+      - name: Launch tests & generate report
+        run: pytest
+
+      - name: Launch the action
+        uses: ewjoachim/coverage-comment-action@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
