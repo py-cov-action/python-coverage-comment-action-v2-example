@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
     steps:
-      - name: DEBUG
-        run: echo '${{ github.event.workflow_run.event }}' && echo '${{ github.event.workflow_run.conclusion }}'
       - name: Post comment
         uses: ewjoachim/python-coverage-comment-action@v2
         with:
