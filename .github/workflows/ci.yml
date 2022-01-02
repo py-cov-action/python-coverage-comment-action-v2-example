@@ -30,3 +30,9 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERBOSE: true
+
+      - name: Store Pull Request comment to be posted
+        uses: actions/upload-artifact@v2
+        with:
+          name: python-coverage-comment-action
+          path: python-coverage-comment-action.txt
