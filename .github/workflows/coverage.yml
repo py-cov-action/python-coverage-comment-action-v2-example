@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
     steps:
+      - name: DEBUG
+        run: echo "$GITHUB_CTX"
+        env:
+          GITHUB_CTX: ${{ github.event.workflow_run }}
+    
       - name: Post comment
         uses: ewjoachim/python-coverage-comment-action@v2
         with:
