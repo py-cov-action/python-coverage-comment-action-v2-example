@@ -13,9 +13,7 @@ jobs:
     if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
     steps:
       - name: DEBUG
-        run: echo "$GITHUB_CTX"
-        env:
-          GITHUB_CTX: ${{ github.event.workflow_run }}
+        uses: crazy-max/ghaction-dump-context@v1
     
       - name: Post comment
         uses: ewjoachim/python-coverage-comment-action@v2
