@@ -1,7 +1,7 @@
 # Example repo for Github Actions: Coverage Comment
 
 > **Note**
-> This is the example of the second version of this action. If you use the third, please see [here](https://github.com/py-cov-action/python-coverage-comment-action-v3-example).
+> This is the example of the v2 of this action. If you use v3, please see [here](https://github.com/py-cov-action/python-coverage-comment-action-v3-example).
 
 ## Badge
 
